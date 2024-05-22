@@ -1,23 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import Meteo from "./components/Meteo"
+import Navbar from "./components/Navbar"
+// const Header = () => {
+//   return(
+//       <nav className="header-links">
+//           <Link to="/" className="link">Home</Link>
+//           <Link to="/about" className="link">About</Link>
+//           <Link to="/contact" className="link">Contact Us</Link>
+//       </nav>
+//   );
+// }
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar/>
+      <Meteo/>
     </div>
   );
 }

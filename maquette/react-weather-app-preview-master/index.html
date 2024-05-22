@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <title>MyWeather</title>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+    <style type="text/css">
+        /* App */
+        body {
+            background: #202629;
+        }
+
+        .App {
+            text-align: center;
+        }
+
+        .App-logo {
+            height: 100px;
+            pointer-events: none;
+        }
+
+        .App-header {
+            background-color: #282c34;
+            min-height: 10vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: calc(10px + 2vmin);
+            color: white;
+        }
+
+        .App-link {
+            color: #61dafb;
+        }
+
+
+
+
+        /* Weather */
+        .weather.card {
+            margin-top:4vh;
+        }
+
+        .weather.card .card-content {
+            background: #0b0829;
+        }
+
+        .weather.card .card-action {
+            background: #120944;
+        }
+
+        .weather .temperature {
+            margin-left:4vh;
+            font-size:120px;
+            font-family: 'Roboto', sans-serif;
+            text-shadow: -1px 0 #61dafb, 0 1px #61dafb, 1px 0 #61dafb, 0 -1px #61dafb;
+        }
+    </style>
+</head>
+<body>
+
+<div id="root">
+    <div class="App">
+        <header class="App-header"><img src="logo_transparent.png" class="App-logo" alt="logo"></header>
+        <div class="row">
+            <div class="col s12 m6 push-m3">
+                <div class="weather card blue-grey darken-1">
+                    <div class="card-content white-text">
+                        <span class="card-title">Lyon</span>
+                        <p><img src="icons/sun.svg"></p>
+                        <span class="temperature">15°</span>
+                        <div class="wind">Vent 1km/h (360°)</div>
+                    </div>
+                    <div class="card-action">
+                        <a href="#" style="font-weight: bold;">Thursday</a>
+                        <a href="#">Friday</a>
+                        <a href="#">Saturday</a>
+                        <a href="#">Sunday</a>
+                        <a href="#">Monday</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body></html>
