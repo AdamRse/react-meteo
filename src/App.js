@@ -1,22 +1,46 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
-import Meteo from "./components/Meteo"
-import Navbar from "./components/Navbar"
-// const Header = () => {
-//   return(
-//       <nav className="header-links">
-//           <Link to="/" className="link">Home</Link>
-//           <Link to="/about" className="link">About</Link>
-//           <Link to="/contact" className="link">Contact Us</Link>
-//       </nav>
-//   );
-// }
+import Weather from "./components/Weather"
+import Header from "./components/Header"
+import Days from "./components/Days"
 
+function WeatherComponent() {
+  const [city, setCity] = useState('Roanne');
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    if (city) {
+      fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},fr&APPID=b606af53884f20fab00e9225547f4ade`)
+        .then(response => response.json())
+        .then(json => setData(json))
+        .catch(error => console.error(error));
+    }
+  }, [city]);
+
+  return (
+    <div>
+      <input 
+        type="text" 
+        value={city} 
+        onChange={(e) => setCity(e.target.value)} 
+        placeholder="Enter city name" 
+      />
+      {data ? <pre className='test'>{JSON.stringify(data, null, 2)}</pre> : 'Loading...'}
+    </div>
+  );
+}
 function App() {
+  const [city, setCity] = useState('Roanne');
+  const handleSearchCity = (newCity) => {
+    setCity(newCity);
+  };
+
   return (
     <div className="App">
-      <Navbar/>
-      <Meteo/>
+      <Header onSearchCity={handleSearchCity}/>
+      <Weather/>
+      <WeatherComponent city={city}/>
+      <Days/>
     </div>
   );
 }

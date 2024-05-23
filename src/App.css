@@ -1,6 +1,11 @@
 body {
   background: #202629;
 }
+#searchCity{
+  color: #fff;
+  text-align: center;
+  max-width: 6rem;
+}
 
 .App {
   text-align: center;
@@ -47,4 +52,10 @@ body {
   font-size:120px;
   font-family: 'Roboto', sans-serif;
   text-shadow: -1px 0 #61dafb, 0 1px #61dafb, 1px 0 #61dafb, 0 -1px #61dafb;
+}
+
+
+.test{
+  background-color: #fff;
+  color: #008;
 }
