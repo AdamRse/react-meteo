@@ -10,10 +10,12 @@ function WeatherComponent() {
 
   useEffect(() => {
     if (city) {
-      fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},fr&APPID=cleAPI`)
+      alert(process.env.REACT_APP_OPWEATHER_KEY)
+      fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},fr&APPID=${process.env.REACT_APP_OPWEATHER_KEY}`)
         .then(response => response.json())
         .then(json => setData(json))
         .catch(error => console.error(error));
+        
     }
   }, [city]);
 
