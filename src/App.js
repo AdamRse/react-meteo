@@ -10,7 +10,7 @@ function WeatherComponent() {
 
   useEffect(() => {
     if (city) {
-      fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},fr&APPID=b606af53884f20fab00e9225547f4ade`)
+      fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},fr&APPID=cleAPI`)
         .then(response => response.json())
         .then(json => setData(json))
         .catch(error => console.error(error));
