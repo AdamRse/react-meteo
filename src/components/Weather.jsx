@@ -14,10 +14,11 @@ const Weather = () => {
                 .then(response => response.json())
                 .then(json => {
                     if(json.list && json.list.length > 1){
+                        let cptDay=0;
+                        let day = 0;
                         for(let i = 0; i<json.list.length; i++){
-                            let dayInfo = [];
                             let dt = new Date(parseInt(json.list[i].dt) * 1000);
-                            dayInfo.name = new Intl.DateTimeFormat(lang, {weekday: "long"}).format(dt);
+                            json.list[i].dayweek = new Intl.DateTimeFormat(lang, {weekday: "long"}).format(dt);
                             console.log(dt);
                         }
 
