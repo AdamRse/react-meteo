@@ -4,10 +4,8 @@ import Days from './Days'
 const Weather = () => {
     const [city, setCity] = useState('Roanne');
     const [weatherData, setWeatherData] = useState(null);
-    const [day, setDay] = useState(null);
+    const [weatherAvgDay, setweatherAvgDay] = useState(null);
     const [lang, setLang] = useState("fr-FR");
-    // const [dt, setDt] = useState(new Date());
-    // const longToday = new Intl.DateTimeFormat(lang, {weekday: "long"}).format(new Date());
 
     // Fonction pour effectuer la requête API
     const apiRequest = (city) => {
@@ -18,9 +16,11 @@ const Weather = () => {
                     if(json.list && json.list.length > 1){
                         for(let i = 0; i<json.list.length; i++){
                             let dayInfo = [];
-                            let dt = new Date(parseInt(dateTime) * 1000);
-                            dayInfo.name = new Intl.DateTimeFormat(lang, {weekday: "long"}).format(new Date());
+                            let dt = new Date(parseInt(json.list[i].dt) * 1000);
+                            dayInfo.name = new Intl.DateTimeFormat(lang, {weekday: "long"}).format(dt);
+                            console.log(dt);
                         }
+
                     }
                     setWeatherData(json)
                 })
