@@ -6,7 +6,7 @@ const Weather = () => {
     const [weatherData, setWeatherData] = useState(null);
     const [days, setweatherDays] = useState([]);
     const [selectedDay, setSelectedDay] = useState(null);
-    const [lang, setLang] = useState("fr-FR");
+    const [lang, setLang] = useState("ar-SA");//fr-FR
 
     function translateIcon(icon) {
         let rt;
