@@ -1,17 +1,13 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class Days extends Component {
-  render() {
-    return (
-        <>
-            <div className="card-action">
-                        <a href="#">Thursday</a>
-                        <a href="#">Friday</a>
-                        <a href="#">Saturday</a>
-                        <a href="#">Sunday</a>
-                        <a href="#">Monday</a>
-                    </div>
-        </>
-    )
-  }
-}
+const Days = ({ days }) => {
+  return (
+    <div className="card-action">
+      {days.map((day, index) => (
+        <a href="#" key={index}>{day}</a>
+      ))}
+    </div>
+  );
+};
+
+export default Days;
