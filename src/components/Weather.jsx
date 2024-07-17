@@ -28,7 +28,8 @@ const Weather = () => {
 
     const apiRequest = (city) => {
         if (city) {
-            fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&lang=${lang.split("-")[0]}&units=metric&APPID=${process.env.REACT_APP_OPWEATHER_KEY}`)
+            //fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&lang=${lang.split("-")[0]}&units=metric&APPID=${process.env.REACT_APP_OPWEATHER_KEY}`)
+            fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&lang=${lang.split("-")[0]}&units=metric&APPID=1d1f21f794364718ef2578f970b702d5`)
                 .then(response => response.json())
                 .then(json => {
                     if (json.list && json.list.length > 1) {
